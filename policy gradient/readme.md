@@ -23,7 +23,7 @@ The goal is to optimize the policy using **natural policy gradient (NPG)** under
 We focus on the discrepancy between:
 
 - **Data-driven policy gradient updates** (finite sample, discrete-time)
-- **Reference / population-level solutions** (e.g., expectation-based or ΦBE-type solutions)
+- **PhiBE solutions**
 
 We measure:
 
