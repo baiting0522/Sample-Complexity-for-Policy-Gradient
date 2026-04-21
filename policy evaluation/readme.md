@@ -43,10 +43,10 @@ Notebook:
 ### 3. Scalar quadratic basis: single-coefficient representation
 
 This notebook uses the quadratic value function form
-\[
+$$
 V^\omega(s) = \frac{1}{2} k_2^\omega s^2 + k_1^\omega s + k_0^\omega,
-\]
-where the coefficients are not treated as independent free parameters. In particular, once \(k_2^\omega\) is determined, the remaining coefficients \(k_1^\omega\) and \(k_0^\omega\) can be expressed accordingly. Therefore, the value function is effectively characterized by a single scalar coefficient.
+$$
+where the coefficients are not treated as independent free parameters. In particular, once \(k_2^\omega\) is determined, the remaining coefficients $k_1^\omega$ and $k_0^\omega$ can be expressed accordingly. Therefore, the value function is effectively characterized by a single scalar coefficient.
 
 Notebook:  
 [Regularized RL_scalar basis.ipynb](https://github.com/baiting0522/Sample-Complexity-for-Policy-Gradient/blob/main/policy%20evaluation/Regularized%20RL_scalar%20basis.ipynb)
