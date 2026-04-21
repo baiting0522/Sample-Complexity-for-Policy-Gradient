@@ -9,10 +9,10 @@ In particular, we analyze how the learned policy parameters deviate from their r
 ## 🔍 Problem Setup
 
 We consider a parameterized stochastic policy of the form:
-\[
-\pi_\omega(a \mid s) = \mathcal{N}(a \mid \omega_1 s + \omega_2, \omega_3^2),
-\]
-where \( \omega = (\omega_1, \omega_2, \omega_3) \) are the policy parameters.
+
+$\pi_\omega(a \mid s) = \mathcal{N}(a \mid \omega_1 s + \omega_2, \omega_3^2)$,
+
+where $\omega = (\omega_1, \omega_2, \omega_3)$ are the policy parameters.
 
 The goal is to optimize the policy using **natural policy gradient (NPG)** under a regularized RL framework.
 
