@@ -11,6 +11,7 @@ The goal is to systematically analyze how **sampling, discretization (dt), and r
 
 ## 📁 Repository Structure
 ├── policy evaluation/
+
 ├── policy gradient/
 
 ---
@@ -22,12 +23,7 @@ This module studies **value function estimation** under a fixed policy.
 We compare:
 
 - **LSTD (data-driven)**  
-- **PhiBE (population / expectation-based solution)**  
-
-Key questions:
-- How does LSTD converge to PhiBE?
-- How do errors depend on sample size, dt, and beta?
-- How does basis choice affect stability?
+- **PhiBE**  
 
 📂 Directory: `policy evaluation/`  
 👉 See the README inside this folder for details.
@@ -41,12 +37,7 @@ This module studies **policy optimization** using natural policy gradient (NPG).
 We analyze:
 
 - Discrepancy between **data-driven updates** and **reference solutions**
-- Error propagation through:
-  - policy parameters
-  - value function
-  - advantage function
-  - gradients
-
+- 
 ### Experiments
 
 - `test_new.ipynb`  
@@ -60,32 +51,3 @@ We analyze:
 
 ---
 
-## ⚙️ Core Components
-
-- Data-driven simulation from **true dynamics**
-- Closed-form / expectation-based benchmarks
-- On-policy sampling
-- Quadratic value function parameterization
-
----
-
-## 📊 What We Learn
-
-Across both modules, we study:
-
-- Effect of **finite samples vs. population solutions**
-- Role of **time discretization (dt)**
-- Impact of **regularization (beta)**
-- Interaction between **evaluation error and optimization error**
-
----
-
-## 🛠️ How to Use
-
-1. Clone the repository:
-```bash
-git clone https://github.com/baiting0522/Sample-Complexity-for-Policy-Gradient.git
-Navigate to a module:
-cd "policy evaluation"
-# or
-cd "policy gradient"
