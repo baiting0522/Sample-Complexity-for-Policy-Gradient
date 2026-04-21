@@ -40,12 +40,14 @@ This notebook uses a beta-scaled basis
 Notebook:  
 [Regularied RL_beta.ipynb](https://github.com/baiting0522/Sample-Complexity-for-Policy-Gradient/blob/main/policy%20evaluation/Regularied%20RL_beta.ipynb)
 
-### 3. Scalar quadratic basis: `V(s) = k_2 s^2 + k_1 s + k_0`
+### 3. Scalar quadratic basis: single-parameter coefficient form
 
-This notebook directly parameterizes the value function as
+This notebook uses the analytical structure of the value function under the Gaussian policy parameterization, where the value function is written as
 \[
-V(s) = k_2 s^2 + k_1 s + k_0.
+V^\omega(s) = \frac{1}{2} k_2^\omega s^2 + k_1^\omega s + k_0^\omega.
 \]
+
+Here, the coefficients \(k_2^\omega\), \(k_1^\omega\), and \(k_0^\omega\) are all determined by the policy parameter \(\omega\). In this sense, the value function is not parameterized by three independent basis coefficients estimated separately, but by a single policy parameterization that induces all three coefficients.
 
 Notebook:  
 [Regularized RL_scalar basis.ipynb](https://github.com/baiting0522/Sample-Complexity-for-Policy-Gradient/blob/main/policy%20evaluation/Regularized%20RL_scalar%20basis.ipynb)
@@ -64,31 +66,3 @@ Typical quantities of interest include:
 - error versus sample size
 - error versus time step `dt`
 - error versus regularization parameter `beta`
-
-## Experiment Goals
-
-The notebooks are designed to study the following questions:
-
-- How close is the LSTD solution to the PhiBE solution?
-- How does the error change as the number of samples increases?
-- How does discretization affect the policy evaluation error?
-- How does the basis choice affect numerical stability and approximation quality?
-- How does the regularization parameter `beta` change the scaling of the value function?
-
-## Repository Contents
-
-- `Regularized RL.ipynb`: policy evaluation with basis `[1, s, s^2]`
-- `Regularied RL_beta.ipynb`: policy evaluation with basis `[1/beta, s, s^2]`
-- `Regularized RL_scalar basis.ipynb`: scalar quadratic parameterization of the value function
-
-## Notes
-
-- The **LSTD solution** is computed from simulated trajectory data.
-- The **PhiBE solution** is computed from the corresponding expectation-based linear system.
-- The comparisons are intended to illustrate the difference between **sample-based** and **population-level** policy evaluation in regularized RL.
-
-## Reference
-
-This project is part of the repository:
-
-[Sample-Complexity-for-Policy-Gradient](https://github.com/baiting0522/Sample-Complexity-for-Policy-Gradient)
