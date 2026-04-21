@@ -37,7 +37,7 @@ This module studies **policy optimization** using natural policy gradient (NPG).
 We analyze:
 
 - Discrepancy between **data-driven updates** and **phibe solutions**
-- 
+   
 ### Experiments
 
 - `test_new.ipynb`  
