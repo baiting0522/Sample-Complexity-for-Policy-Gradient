@@ -54,7 +54,7 @@ Key goal:
 
 ---
 
-### 2. Error vs Regularization Parameter \(\beta\)
+### 2. Error vs Regularization Parameter $\beta$
 
 We fix \(dt\) and sample size, and vary \(\beta\) to study the effect of entropy regularization.
 
