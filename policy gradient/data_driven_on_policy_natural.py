@@ -141,7 +141,8 @@ class NaturalPG_on_policy:
                     # Compute theta
                     theta, A_diff, b_diff = compute_theta_on_policy(
                         omega_val, self.dt, s_all, a_all, 3,
-                        self.A_matrix, self.b_vector
+                        self.A_matrix, self.b_vector, self.beta, self.A, self.B,
+                        self.M, self.N, self.lambda_reg
                     )
 
                     theta_list.append(theta)

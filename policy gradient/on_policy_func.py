@@ -203,7 +203,7 @@ def compute_grad_on_policy(theta, s_all, a_all, omega, beta, lambda_reg, M, N, d
     return grad
 
 
-def compute_theta_on_policy(omega_val, delta_t, s_all, a_all, basis_length, A_func, b_func):
+def compute_theta_on_policy(omega_val, delta_t, s_all, a_all, basis_length, A_func, b_func, beta, A, B, M, N, lambda_reg):
     """
     Compute theta parameters for on-policy value function.
 
@@ -240,11 +240,11 @@ def compute_theta_on_policy(omega_val, delta_t, s_all, a_all, basis_length, A_fu
     theta = np.linalg.solve(A_f.T, -b)
 
     s_curr = s_all[:, :-1].reshape(-1)
-    A_t = create_A_matrix_phibe(1, -1, 1, omega_val, s_curr, delta_t)
+    A_t = create_A_matrix_phibe(beta, A, B, omega_val, s_curr, delta_t)
     A_diff = np.linalg.norm(A_t - A_f/(n_traj * n_steps))
 
     # PhiBE b
-    b_phibe_func = create_b_vector_phibe(1, 1, 0.1)
+    b_phibe_func = create_b_vector_phibe(M, N, lambda_reg)
     b_t = np.zeros(basis_length)
     for s in s_curr:
         b_t += b_phibe_func(s, omega_val[0], omega_val[1], omega_val[2])
